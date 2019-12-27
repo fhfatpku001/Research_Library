@@ -33,27 +33,41 @@ private:
   int grid_size; // the size of the grid diagram//
   bool is_valid; // check a grid is a valid grid diagram for links or not.
 
-  void print_vec_vec_int (const vector<vector<int>>& input); // Aux function for print a matrix of int.
+  void print_vec_vec_int (const vector<vector<int>>& input); //(DONE 12/25) Aux function for print a matrix of int.
 
-  vector<int> conjugate_vec (const vector<int>& input); // A hand-maded hash map, map the column num to row number.
+  vector<int> conjugate_vec (const vector<int>& input); //(DONE 12/25) A hand-maded hash map, map the column num to row number.
   
 public:
 
-  grid(const vector<int>& _X_pos, const vector<int>& _O_pos, int _grid_size); // constructor of a grid: given position of X points, O points and grid size //
+  grid(const vector<int>& _X_pos, const vector<int>& _O_pos, int _grid_size); // (DONE 12/27) constructor of a grid: given position of X points, O points and grid size //
 
-  bool is_valid_grid (void); // return valid grid or not
+  bool is_valid_grid (void); // (DONE 12/26) return valid grid or not
 
-  int num_link_components(void); // return the number of link components in a grid (Algorithm: DFS, time O(N), space O(N)).
+  int num_link_components(void); // (DONE 12/26) return the number of link components in a grid (Algorithm: DFS, time O(N), space O(N)).
  
-  vector<vector<int>> X_coordinates (void); // return the X points coordinates in {row, col} format.
+  vector<vector<int>> X_coordinates (void); // (DONE 12/26) return the X points coordinates in {row, col} format.
   
-  vector<vector<int>> O_coordinates (void); // return all O points coordinates in {row, col} format.
+  vector<vector<int>> O_coordinates (void); //(DONE 12/26) return all O points coordinates in {row, col} format.
 
-  void print_X_coordinates(void); // print the X points coordinates in {row, col} format.
+  void print_X_coordinates(void); // (DONE 12/26) print the X points coordinates in {row, col} format.
 
-  void print_O_coordinates(void); // print all O points coordinates in {row, col} format.
+  void print_O_coordinates(void); // (DONE 12/26) print all O points coordinates in {row, col} format.
   
-  void print_grid(void); // print grid together with X or O points. Grid size should be less than or equal to 10.
+  void print_grid(void); // (DONE 12/26) print grid together with X or O points. Grid size should be less than or equal to 10.
+
+  bool is_knot (void); // (DONE 12/27) check if a grid represent a knot or not; 
+
+  // TODO LIST
+  //: grid/ stabilization, commutation, cyclic permutation.
+
+  void stab(const int& row, const int& col);
+
+  void destab(const int& row, const int& col);
+
+  void h_com (const int& row_1, const int& row_2);
+
+  void v_com (const int& col_1, const int& col_2);
+  
 };
 
 /* General definition of generators of a grid 
@@ -77,5 +91,8 @@ public:
 
 /* Heegaard Floer homology related functions */
 class HF {
+public:
+  vector<grid_generator*> all_generators (const grid& A);
+  
   
 };

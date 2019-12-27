@@ -26,6 +26,12 @@ int main()
   G->print_grid();
 
   cout << G->num_link_components() << endl;
+
+  if (G->is_knot()) {
+    cout << "is knot" << endl;
+  } else {
+    cout << " Not knot" << endl;
+  }
   
   return 0;
 }

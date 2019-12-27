@@ -5,19 +5,25 @@
    - [X] validation function: is_valid_grid;
    - [X] grid constructor function;
    - [X] print grid function: print_grid;
-   - [ ] function output all CFL_generators in a grid;
    - [X] num of link component;
-   - [ ] output x/o cordinates;
+   - [X] output x/o cordinates;
+   - [ ] grid operation-stabilization;
+   - [ ] grid operation-destabilization;
+   - [ ] grid operation-commutation;
+   - [ ] grid operation-cyclic permutation;
+   - [X] check a grid is a knot or not;
+   - [ ] print fancy link diagram;
+
+** TODO class generator
+   - [ ] print a generator in a grid;
 
 
 ** TODO class link 
    - [ ] calculate linking number of certain grid;
    
-** TODO class generator
-   - [ ] print a generator in a grid;
+** TODO class HF
+   - [ ] function output all CFL_generators in a grid;
 
-
-** TODO calculate the number of link component (DFS)
 
 ** TODO Alexander Polynomial of link?
 

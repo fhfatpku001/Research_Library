@@ -161,3 +161,7 @@ grid::grid(const vector<int>& _X_pos, const vector<int>& _O_pos, int _grid_size)
   grid_size = _grid_size;
   is_valid = is_valid_grid();
 }
+
+bool grid::is_knot() {
+  return  (is_valid_grid() && num_link_components() == 1) ? true : false;
+}
