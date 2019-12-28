@@ -1,0 +1,26 @@
+* TODO_list
+
+** TODO class grid 
+
+   - [X] validation function: is_valid_grid;
+   - [X] grid constructor function;
+   - [X] print grid function: print_grid;
+   - [ ] function output all CFL_generators in a grid;
+   - [X] num of link component;
+   - [ ] output x/o cordinates;
+
+
+** TODO class link 
+   - [ ] calculate linking number of certain grid;
+   
+** TODO class generator
+   - [ ] print a generator in a grid;
+
+
+** TODO calculate the number of link component (DFS)
+
+** TODO Alexander Polynomial of link?
+
+** TODO Is_alternating Projection?
+
+** TODO Is_thin_knot?
