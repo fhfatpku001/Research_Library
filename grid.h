@@ -79,13 +79,13 @@ class grid_generator {
 private:
   vector<int> gen_pos; // store the position of intersections points;
   int gen_size; // store the generator size;
-
+  bool is_valid_gen;
 public:
-  grid_generator (const vector<int>& _gen_pos, const vector<int>& gen_size);
+  grid_generator (const vector<int>& _gen_pos, const int& _gen_size); //(DONE 1/2) constructor;
 
-  bool is_valid_generator (void);
+  bool is_valid_generator (void); // (DONE 1/2) check if the generator is valid or not;
 
-  void print_gen(void);  
+  void print_gen(void);  //(DONE 1/2) print the generator;
 };
 
 

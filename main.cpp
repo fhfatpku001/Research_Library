@@ -32,6 +32,13 @@ int main()
   } else {
     cout << " Not knot" << endl;
   }
+
+  vector<int> v3 = {0,3,4,5,2,1};
+
+  grid_generator* gen = new grid_generator(v3, 6);
+
+  gen->print_gen();
+    
   
   return 0;
 }

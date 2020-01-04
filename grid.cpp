@@ -1,20 +1,9 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <queue>
-#include <stack>
-#include <algorithm>
-#include <functional>
-#include <unordered_map>
-#include <unordered_set>
-#include <utility>
-#include <list>
-#include <cmath>
-#include <sstream>
-#include <climits>
-#include <bitset>
+/*Content: This file contains the definitions related to the grid diagram*/
+
 #include "grid.h"
-using namespace std;
+
+
+
 
 /* print_vec_vec_int-input: a matrix of int;
  * print_vec_vec_int-output: NONE, print matrix;
@@ -152,19 +141,21 @@ void grid::print_grid(void) {
 	s[1] = 'X'; s[3] = 'O'; // if a block contains both X and O;
       } else if (X_pos[i] == j && O_pos[i] != j) {
 	s[2] = 'X'; // a block contains a single X;
-	} else if (X_pos[i] != j && O_pos[i] == j) {
+      } else if (X_pos[i] != j && O_pos[i] == j) {
 	s[2] = 'O'; // a block contains a single O;
       }
 	
-	cout << s ;
-      }
-      cout << "|" << endl;
-
-      for (int j = 0; j < grid_size; ++j) {
-	cout << ".___" ; 
-      }
-      cout << "." <<endl;
+      cout << s ;
     }
+    cout << "|" << endl;
+
+    for (int j = 0; j < grid_size; ++j) {
+      cout << ".___" ; 
+    }
+    cout << "." <<endl;
+  }
+
+  return ;
 }
 
 /*
