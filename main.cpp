@@ -25,6 +25,11 @@ int main()
 
   G->print_grid();
 
+  G->h_com(2);
+
+  G->print_grid();
+  
+ /*
   cout << G->num_link_components() << endl;
 
   if (G->is_knot()) {
@@ -33,12 +38,17 @@ int main()
     cout << " Not knot" << endl;
   }
 
+
+  
+ 
   vector<int> v3 = {0,3,4,5,2,1};
 
   grid_generator* gen = new grid_generator(v3, 6);
 
   gen->print_gen();
-    
+  */
+
+  
   
   return 0;
 }

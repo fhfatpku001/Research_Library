@@ -14,8 +14,10 @@
    - [X] check a grid is a knot or not;
    - [ ] print fancy link diagram;
 
-** TODO class generator
-   - [ ] print a generator in a grid;
+** TODO class grid_generator
+   - [X] print a generator in a grid;
+   - [X] is valid generator;
+   - [X] constructor;
 
 
 ** TODO class link 

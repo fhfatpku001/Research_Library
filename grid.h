@@ -55,18 +55,26 @@ public:
   
   void print_grid(void); // (DONE 12/26) print grid together with X or O points. Grid size should be less than or equal to 10.
 
-  bool is_knot (void); // (DONE 12/27) check if a grid represent a knot or not; 
+  bool is_knot (void); // (DONE 12/27) check if a grid represent a knot or not;
+  
+  /*-------------------- Grid_moves ---------------------------------*/
 
-  // TODO LIST
+  void h_com (const int& row_1); // (DONE 1/3) commute row_1 with row_1 + 1. Check availability before doing the commute.
+  
+  // TODO LIST 
   //: grid/ stabilization, commutation, cyclic permutation.
 
+//( Remark: if one needs to do a sequence of v_coms, it is better to do a hash map first.)
+  
   void stab(const int& row, const int& col);
 
   void destab(const int& row, const int& col);
 
-  void h_com (const int& row_1, const int& row_2);
+  void v_com (const int& col_1, const int& col_2); 
 
-  void v_com (const int& col_1, const int& col_2);
+  void h_cyc (void);
+  
+  void v_cyc (void);
   
 };
 
