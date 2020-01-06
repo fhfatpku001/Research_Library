@@ -72,7 +72,7 @@ public:
 
   void v_com (const int& col_1, const int& col_2); 
 
-  void h_cyc (void);
+  void h_cyc (void); //DONE 1/2 exchange rows.
   
   void v_cyc (void);
   
@@ -100,7 +100,7 @@ public:
 /* Heegaard Floer homology related functions */
 class HF {
 public:
-  vector<grid_generator*> all_generators (const grid& A);
+  vector<grid_generator*> all_generators (const grid& A); //TODO
   
-  
+  void print_grid_and_gen (const grid& A, const grid_generator& x); // TODO
 };

@@ -9,6 +9,11 @@ grid::h_com(const int &row_1).param: (a,b) - the interval in row_1, (c,d) the in
 */
 
 void grid::h_com(const int &row_1) {
+  if (!is_valid) {
+    std::cout << "invalid grid" << endl;
+    return;
+  }
+  
   int row_2 = (row_1 + 1) % grid_size;
   
   if (row_1 < 0 || row_1 >= grid_size || row_2 < 0 || row_2 >= grid_size) {
@@ -39,3 +44,37 @@ void grid::h_com(const int &row_1) {
 
   return;
 }
+
+/*
+grid::h_cyc()-input: void;
+grid::h_cyc()-output: void, cyclic permute rows;
+@grid::h_cyc().param: X_pos_end, O_pos_end, store the last X, O positions;
+*/
+
+void grid::h_cyc(void) {
+  if (!is_valid) {
+    return;
+  }
+  
+  // permute X_pos, keep grid size unchanged;
+  int X_pos_end = X_pos[0];
+
+  for (size_t i = 0; i + 1 < X_pos.size(); ++i) {
+    X_pos[i] = X_pos[i + 1];
+  }
+
+  X_pos.back() = X_pos_end;
+
+  // Permute O_pos;
+  int O_pos_end = O_pos[0];
+
+  for (size_t i = 0; i + 1 < O_pos.size(); ++i) {
+    O_pos[i] = O_pos[i + 1];
+  }
+
+  O_pos.back() = O_pos_end;
+
+  return;
+}
+
+
