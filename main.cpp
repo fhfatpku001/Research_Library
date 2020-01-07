@@ -28,7 +28,18 @@ int main()
   G->h_com(2);
 
   G->print_grid();
-  
+
+  G->v_com(1);
+
+  G->print_grid();
+
+  G->h_cyc();
+
+  G->print_grid();
+
+  G->v_cyc();
+
+  G->print_grid();
  /*
   cout << G->num_link_components() << endl;
 

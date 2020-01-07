@@ -61,20 +61,18 @@ public:
 
   void h_com (const int& row_1); // (DONE 1/3) commute row_1 with row_1 + 1. Check availability before doing the commute.
   
-  // TODO LIST 
-  //: grid/ stabilization, commutation, cyclic permutation.
-
 //( Remark: if one needs to do a sequence of v_coms, it is better to do a hash map first.)
-  
-  void stab(const int& row, const int& col);
-
-  void destab(const int& row, const int& col);
-
-  void v_com (const int& col_1, const int& col_2); 
-
   void h_cyc (void); //DONE 1/2 exchange rows.
   
-  void v_cyc (void);
+  void v_cyc (void); //DONE 1/6 exchange cols;
+
+  void v_com (const int& col_1); //Done 1/6 col commutation;
+  
+  void stab(const int& row, const int& col); // WAITLIST
+
+  void destab(const int& row, const int& col); // WAITLIST
+
+  bool is_alternating (void); // WAITLIST
   
 };
 
@@ -100,7 +98,28 @@ public:
 /* Heegaard Floer homology related functions */
 class HF {
 public:
-  vector<grid_generator*> all_generators (const grid& A); //TODO
+  HF () { 
+  } // constructor. NOT yet decided.
   
-  void print_grid_and_gen (const grid& A, const grid_generator& x); // TODO
+  vector<grid_generator*> all_generators (const grid& A); //TODO output all generators of 
+  
+  void print_grid_and_gen (const grid& A, const grid_generator& x); // TODO print the grade together with the generator;
+
+  int maslov_grading (const grid& A, const grid_generator& x); //TODO: Calculate the Maslov grading of certain generator;
+
+  vector<grid_generator*> kernal (const grid& A); //TODO: Kernal of the differentials
+
+  vector<grid_generator*> image (const grid& A); // TODO: image of the differentials;
+
+  vector<grid_generator*> HF_hat_gen (const grid& A); // TODO: calcuate the HF hat from grid diagram;
+
+  int tau_invariant (const grid& A); // TODO: calcuate the tau invariant of the grade diagram;
+
+  int upsilon_invariant (const grid& A); // TODO: the upsilon invariant of the grade diagram;
+
+  vector<int,int> involutive_upsilon_invariant (const grid& A); // TODO: the involutive upsilon invariant 
+
+  int signature_invariant (const grid& A); //TODO: the signature of the grade diagram;
+  
+  vector<int> reduced_alexander_poly (const grid& A); // TODO: calcuate the alexander polynomial of a grid diagram.
 };
