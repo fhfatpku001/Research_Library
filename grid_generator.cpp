@@ -79,3 +79,12 @@ void grid_generator::print_gen(void) {
   
   return;
 }
+
+void grid_generator::print_gen_vec(void) {
+  std::cout << "(";
+  for (int i = 0; i < gen_size; ++i) {
+    std::cout << gen_pos[i] << " ";
+  }
+
+  std::cout << ")" << endl;
+}

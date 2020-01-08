@@ -56,8 +56,9 @@ public:
   void print_grid(void); // (DONE 12/26) print grid together with X or O points. Grid size should be less than or equal to 10.
 
   bool is_knot (void); // (DONE 12/27) check if a grid represent a knot or not;
-  
-  /*-------------------- Grid_moves ---------------------------------*/
+
+  int get_grid_size(void); // done 1/6: return grid size;
+   /*-------------------- Grid_moves ---------------------------------*/
 
   void h_com (const int& row_1); // (DONE 1/3) commute row_1 with row_1 + 1. Check availability before doing the commute.
   
@@ -72,7 +73,7 @@ public:
 
   void destab(const int& row, const int& col); // WAITLIST
 
-  bool is_alternating (void); // WAITLIST
+  bool is_alternating (void); // TODO - complicated
   
 };
 
@@ -92,21 +93,28 @@ public:
   bool is_valid_generator (void); // (DONE 1/2) check if the generator is valid or not;
 
   void print_gen(void);  //(DONE 1/2) print the generator;
+
+  void print_gen_vec(void); // DONE 1/7 print generator number form;
 };
 
 
 /* Heegaard Floer homology related functions */
 class HF {
+private:
+  void helper_gens (vector<grid_generator*>& result, vector<int>& current_vec, vector<bool>& visited); // A helper function for DFS all generators of a grid diagram. 
+  
 public:
   HF () { 
   } // constructor. NOT yet decided.
   
-  vector<grid_generator*> all_generators (const grid& A); //TODO output all generators of 
+  vector<grid_generator*> all_generators (grid* A); //TODO output all generators of 
   
   void print_grid_and_gen (const grid& A, const grid_generator& x); // TODO print the grade together with the generator;
 
   int maslov_grading (const grid& A, const grid_generator& x); //TODO: Calculate the Maslov grading of certain generator;
 
+  int alex_grading (const grid& A, const grid_generator& x); // TODO: Calculate the Alexander Grading of input generator;
+  
   vector<grid_generator*> kernal (const grid& A); //TODO: Kernal of the differentials
 
   vector<grid_generator*> image (const grid& A); // TODO: image of the differentials;

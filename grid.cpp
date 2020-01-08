@@ -209,4 +209,10 @@ bool grid::is_knot() {
   return  (is_valid_grid() && num_link_components() == 1) ? true : false;
 }
 
-
+/*
+grid::get_grid_size()-input: void;
+grid::get_grid_size()-output: the grid size;
+*/
+int grid::get_grid_size() {
+  return grid_size;
+}

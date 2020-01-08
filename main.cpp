@@ -19,27 +19,22 @@ using namespace std;
 
 int main()
 {
-  vector<int> v1 = {1,2,3,4,0};
-  vector<int> v2 = {3,4,0,2,1};
-  grid* G = new grid(v1, v2, 5);
+  vector<int> v1 = {1,2,3,0};
+  vector<int> v2 = {3,0,2,1};
+  grid* G = new grid(v1, v2, 4);
 
   G->print_grid();
 
-  G->h_com(2);
+  HF* Heegaard = new HF();
 
-  G->print_grid();
+  vector<grid_generator*> result = Heegaard->all_generators(G);
 
-  G->v_com(1);
+  for (int i = 0; i < result.size(); ++i) {
+    result[i]->print_gen_vec();
+  }
 
-  G->print_grid();
-
-  G->h_cyc();
-
-  G->print_grid();
-
-  G->v_cyc();
-
-  G->print_grid();
+  
+  
  /*
   cout << G->num_link_components() << endl;
 
