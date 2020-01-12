@@ -17,10 +17,10 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "grid_diagram_class.h"
+#include "grid_diagram.h"
 
 using namespace std;
-using namespace griddiagramnamespace;
+using namespace gridhomology::griddiagram;
 
 namespace gridmoves{
 

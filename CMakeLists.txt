@@ -6,10 +6,10 @@ project(myproject)
 
 add_library(
 	grid-homology SHARED
-	grid_diagram_class.h
-	grid_diagram_class.cc
-	grid_move_functions.h
-	grid_move_functions.cc
+	grid_diagram.h
+	grid_diagram.cc
+	grid_move.h
+	grid_move.cc
 	)
 
 add_executable(myproject main.cc) 

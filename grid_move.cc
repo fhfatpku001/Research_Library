@@ -1,7 +1,7 @@
-#include "grid_move_functions.h"
+#include "grid_move.h"
 
 using namespace std;
-using namespace griddiagramnamespace;
+using namespace gridhomology::griddiagram;
 
 
 void gridmoves::DoHorizontalCommutation(GridDiagram *grid_diagram, const int &row) {

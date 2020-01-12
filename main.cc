@@ -36,17 +36,17 @@ Copyright (c) 2020 Haofei Fan (fhfatpku001@gmail.com)
 #include <climits>
 #include <bitset>
 
-#include "grid_diagram_class.h"
-//#include "grid_CFK_generator_class.h"
+#include "grid_diagram.h"
+//#include "grid_CFK_generator.h"
 
 using namespace std;
-
+using namespace gridhomology::griddiagram;
 
 int main()
 {
   vector<int> _x_pos = {1,2,3,4,0};
   vector<int> _o_pos = {3,0,4,2,1};
-  griddiagramnamespace::GridDiagram* G = new griddiagramnamespace::GridDiagram(_x_pos, _o_pos, 5);
+  GridDiagram* G = new GridDiagram(_x_pos, _o_pos);
 
   G->PrintGridDiagram();
   
