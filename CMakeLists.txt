@@ -10,6 +10,8 @@ add_library(
 	grid_diagram.cc
 	grid_move.h
 	grid_move.cc
+	vector_related_tools.h
+	vector_related_tools.cc
 	)
 
 add_executable(myproject main.cc) 

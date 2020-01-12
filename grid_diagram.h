@@ -1,7 +1,7 @@
 /******************************************************************************
  * Copyright (c) 2020 Haofei Fan (fhfatpku001@gmail.com)
  * 
- * Licensed under the MIT License. You may obtaininga copy of the license at 
+ * Licensed under the MIT License. You may obtain a copy of the license at 
  * 
  * https://github.com/fhfatpku001/Research_Library/blob/master/LICENSE
  *****************************************************************************/
@@ -53,7 +53,6 @@ public:
 
   // @brief Get the positions of o-type points in the Griddiagram;
   // @return In form of {{row(o_i), col(o_i)}},
-  // i from 0 to grid_size -1;
   vector<vector<int>> GetOPointsCoordinates() const;
 
   // @brief Get the size of the grid diagram;
@@ -73,14 +72,7 @@ private:
   vector<int> o_points_positions_;
   bool is_valid_grid_;
 
-  // @brief Print Two dimensional vector;
-  // @param input: the 2-dim vector to be printed;
-  void PrintTwoDimensionalVector (const vector<vector<int>>& input) const;
 
-  // @brief Get the row positions of either x_points or o_points;
-  // @param points_column_positions
-  // @return The row positions of x_points or o_points;
-  vector<int> GetRowPositions (const vector<int>& points_column_positions) const;
 
   // @brief A helper function check whether a grid diagram is valid when constructing it;
   bool CheckValidInput() const;  

@@ -21,26 +21,7 @@ const bool& GridDiagram::IsValidGrid() const {
   return is_valid_grid_;
 }
 
-void GridDiagram::PrintTwoDimensionalVector (const vector<vector<int>>& input) const {
-  for (const auto& it : input) {
-    for (const auto& iit : it) {
-      std::cout << iit << " ";
-    }
-    std::cout << endl;
-  }
-  std::cout << endl;
-}
 
-vector<int> GridDiagram::GetRowPositions (const vector<int>& points_column_positions) const {
-  // Row number of i in points_column_positions are the positions of i;
-  vector<int> row_positions_(points_column_positions.size(), 0);
-
-  for (int i = 0; i < points_column_positions.size(); ++i) {
-    row_positions_[points_column_positions[i]] = i;
-  }
-
-  return row_positions_;
-}
 
 void GridDiagram::PrintGridDiagram() const {
   // Requirement on the grid size;

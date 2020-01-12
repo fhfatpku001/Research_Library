@@ -44,9 +44,9 @@ using namespace gridhomology::griddiagram;
 
 int main()
 {
-  vector<int> _x_pos = {1,2,3,4,0};
-  vector<int> _o_pos = {3,0,4,2,1};
-  GridDiagram* G = new GridDiagram(_x_pos, _o_pos);
+  vector<int> x_pos = {1,2,3,4,0};
+  vector<int> o_pos = {3,0,4,2,1};
+  GridDiagram* G = new GridDiagram(x_pos, o_pos);
 
   G->PrintGridDiagram();
   

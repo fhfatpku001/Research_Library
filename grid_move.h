@@ -1,7 +1,7 @@
 /******************************************************************************
  * Copyright (c) 2020 Haofei Fan (fhfatpku001@gmail.com)
  * 
- * Licensed under the MIT License. You may obtaininga copy of the license at 
+ * Licensed under the MIT License. You may obtain a copy of the license at 
  * 
  * https://github.com/fhfatpku001/Research_Library/blob/master/LICENSE
  *****************************************************************************/
