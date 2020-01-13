@@ -22,11 +22,19 @@
 using namespace std;
 using namespace gridhomology::griddiagram;
 
+namespace gridhomology{
 namespace gridmoves{
 
-// 
+// @brief Do a row commutation when possible;
+// @param grid_diagram A grid diagram;
+// @param row The row and row + 1 we gonna commute
+// valid input from 0 to  grid_size - 1;
 void DoHorizontalCommutation (GridDiagram* grid_diagram, const int& row);
 
+// @brief Do a column commutation when possible;
+// @param grid_diagram A grid diagram;
+// @param col The col and col + 1 we gonna commute
+// valid input from 0 to  grid_size - 1;
 void DoVerticalCommutation(GridDiagram* grid_diagram, const int& col);
 
 void DoVerticalCommutation (GridDiagram* grid_diagram, const int& col);
@@ -39,7 +47,8 @@ void DoVerticalCyclicPermutation (GridDiagram* grid_diagram);
   
 // TODO: void DoDestabilization (GridDiagram* grid_diagram, const int& row, const int& col);
 
-}
+}  // namespace gridmoves 
+}  // namespace gridhomology
 
 
   

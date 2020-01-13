@@ -20,16 +20,16 @@ namespace griddiagram {
 class GridDiagram {
 public:
   // @brief Constructor of the class GridDiagram;
-  // @param x_pos the column positions of x-type points;
-  // @param o_pos the column positions of o-type points;
+  // @param x_pos The column positions of x-type points;
+  // @param o_pos The column positions of o-type points;
   GridDiagram (const vector<int>& x_pos, const vector<int>& o_pos);
 
   // @brief Set new positions for x-type points;
-  // @param x_pos the column positions of x-type points;
+  // @param x_pos The column positions of x-type points;
   void SetXPointsPositions(const vector<int>& x_pos);
   
   // @brief Set new positions for o-type points;
-  // @param x_pos the column positions of o-type points;
+  // @param x_pos The column positions of o-type points;
   void SetOPointsPositions(const vector<int>& o_pos);
 
   // @brief Check the well-definededness of the GridDiagram;
@@ -48,7 +48,7 @@ public:
   vector<vector<int>> GetOPointsCoordinates() const;
 
   // @brief Get the size of the grid diagram;
-  // @return size of the grid;
+  // @return Size of the grid;
   size_t GetGridSize() const;
 
   // @brief Get the positions of x points 
@@ -58,16 +58,19 @@ public:
   // @brief Get the positions of o points 
   // @return o points positions in vector<int> form;
   const vector<int>& GetOPointsPositions() const;
-    
+
+private:
+  // @brief A helper function check whether a grid diagram
+  // is valid when constructing it;
+  bool CheckValidInput() const;  
+  
 private:
   vector<int> x_points_positions_;
   vector<int> o_points_positions_;
   bool is_valid_grid_;
 
-  // @brief A helper function check whether a grid diagram is valid when constructing it;
-  bool CheckValidInput() const;  
-
 };
   
 }  // namespace griddiagram
 }  // namespace gridhomology
+

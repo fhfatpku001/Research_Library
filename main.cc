@@ -39,11 +39,13 @@ Copyright (c) 2020 Haofei Fan (fhfatpku001@gmail.com)
 #include "grid_diagram.h"
 #include "classic_invariants.h"
 #include "vector_related_tools.h"
+#include "grid_move.h"
 //#include "grid_CFK_generator.h"
 
 using namespace std;
 using namespace gridhomology::griddiagram;
 using namespace gridhomology::classicinvariants;
+using namespace gridhomology::gridmoves;
 
 int main()
 {
@@ -53,6 +55,20 @@ int main()
 
   G->PrintGridDiagram();
 
-  cout << GetNumOfLinkComponents(G) << endl;
+  cout << GetNumOfLinkComponents(*G) << endl;
+    
+  //DoHorizontalCommutation(G, 3);
+					
+  //G->PrintGridDiagram();
+
+  //DoHorizontalCyclicPermutation(G);
+
+  //G->PrintGridDiagram();
+
+					DoVerticalCyclicPermutation(G);
+					
+					G->PrintGridDiagram();
+  
+  
   return 0;
 }

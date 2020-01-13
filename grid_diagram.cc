@@ -173,6 +173,3 @@ const vector<int>& GridDiagram::GetOPointsPositions() const {
 }  // namespace griddiagram
 }  // namespace gridhomology
 
-
-
-

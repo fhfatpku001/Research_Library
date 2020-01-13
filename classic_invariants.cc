@@ -17,10 +17,10 @@ using namespace gridhomology::tools;
 namespace gridhomology {
 namespace classicinvariants {
 
-size_t GetNumOfLinkComponents (GridDiagram* grid_diagram) {
-  const vector<int>& x_positions = grid_diagram->GetXPointsPositions();
-  const vector<int> conjugate_o_positions = GetRowPositions(grid_diagram->GetOPointsPositions());
-  vector<bool> visited_x_positions(grid_diagram->GetGridSize(), false);
+size_t GetNumOfLinkComponents (const GridDiagram& grid_diagram) {
+  const vector<int>& x_positions = grid_diagram.GetXPointsPositions();
+  const vector<int> conjugate_o_positions = GetRowPositions(grid_diagram.GetOPointsPositions());
+  vector<bool> visited_x_positions(grid_diagram.GetGridSize(), false);
   size_t count = 0;
   for (size_t i = 0; i < x_positions.size(); ++i) {
     if (!visited_x_positions[i]) {
@@ -37,8 +37,8 @@ size_t GetNumOfLinkComponents (GridDiagram* grid_diagram) {
   return count;
 };
 
-bool IsKnot(GridDiagram* grid_diagram) {
-  return true;
+bool IsKnot(const GridDiagram& grid_diagram) {
+  return (GetNumOfLinkComponents(grid_diagram) == 1) ? true : false;
 };
 
 }  // namespace classicinvariants

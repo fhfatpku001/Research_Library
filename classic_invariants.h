@@ -21,17 +21,20 @@ using namespace gridhomology::griddiagram;
 namespace gridhomology {
 namespace classicinvariants {
 
-// @brief: a grid diagram represents a link,
+// @brief: A grid diagram represents a link,
 // this function get the number of link connected
 // components (number of circles)
-// @param: grid_diagram input a grid diagram;
-// @return: number of link components; (non-negative);
-size_t GetNumOfLinkComponents (GridDiagram* grid_diagram);
+// @param: grid_diagram Represents a grid diagram;
+// @return: Number of link components; (non-negative);
+size_t GetNumOfLinkComponents (const GridDiagram& grid_diagram);
 
-// @brief: check whether a grid diagram represents a knot or not;
-// @param: grid_diagram input a grid diagram;
+// @brief: Check whether a grid diagram represents a knot or not;
+// @param: grid_diagram Input a grid diagram;
 // @return: true, if is a knot : false, otherwise;
-bool IsKnot(GridDiagram* grid_diagram);
+bool IsKnot(const GridDiagram& grid_diagram);
 
+// TODO: Alexander Polynomial.
+// TODO: Signature of a link.
 }  // namespace classicinvariants
 }  // namespace gridhomology
+
