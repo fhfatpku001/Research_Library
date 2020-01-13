@@ -45,18 +45,18 @@ void GridDiagram::PrintGridDiagram() const {
   // when both X and O in the same block, print X O; 
   for (int i = 0; i < GetGridSize(); ++i) {
     for (int j = 0; j < GetGridSize(); ++j) {
-      string blank_block_ = "|   ";
+      string blank_block = "|   ";
       if (x_points_positions_[i] == j && o_points_positions_[i] == j) {
 	// a block contains both X and O;
-	blank_block_[1] = 'X'; blank_block_[3] = 'O'; 
+	blank_block[1] = 'X'; blank_block[3] = 'O'; 
       } else if (x_points_positions_[i] == j && o_points_positions_[i] != j) {
 	// a block contains a single X;
-	blank_block_[2] = 'X'; 
+	blank_block[2] = 'X'; 
       } else if (x_points_positions_[i] != j && o_points_positions_[i] == j) {
 	// a block contains a single O;
-	blank_block_[2] = 'O'; 
+	blank_block[2] = 'O'; 
       }
-      cout << blank_block_ ;
+      cout << blank_block ;
     }
     cout << "|" << endl;
     for (int j = 0; j < GetGridSize(); ++j) {
@@ -74,11 +74,11 @@ vector<vector<int>> GridDiagram::GetXPointsCoordinates() const {
   }
 
   // Get x_points coordinates;
-  vector<vector<int>> x_coordinates_;
+  vector<vector<int>> x_coordinates;
   for (int i = 0; i < x_points_positions_.size(); ++i) {
-    x_coordinates_.push_back({i, x_points_positions_[i]});
+    x_coordinates.push_back({i, x_points_positions_[i]});
   }
-  return x_coordinates_;
+  return x_coordinates;
 }
 
 vector<vector<int>> GridDiagram::GetOPointsCoordinates() const {
@@ -88,11 +88,11 @@ vector<vector<int>> GridDiagram::GetOPointsCoordinates() const {
   }
 
   // Get o_points coordinates;
-  vector<vector<int>> o_coordinates_;
+  vector<vector<int>> o_coordinates;
   for (int i = 0; i < o_points_positions_.size(); ++i) {
-    o_coordinates_.push_back({i, o_points_positions_[i]});
+    o_coordinates.push_back({i, o_points_positions_[i]});
   }
-  return o_coordinates_;
+  return o_coordinates;
 }
 
 void GridDiagram::SetXPointsPositions(const vector<int>& x_pos) {
@@ -103,20 +103,20 @@ void GridDiagram::SetXPointsPositions(const vector<int>& x_pos) {
   }
 
   // construct a temporary hash map visited_x_positions to check if input is valid;
-  vector<bool> visited_x_positions_(x_pos.size(), false);
+  vector<bool> visited_x_positions(x_pos.size(), false);
   for (int i = 0; i < GetGridSize(); ++i) {
-    if (visited_x_positions_[x_pos[i]] || x_pos[i] >= GetGridSize() || x_pos[i] < 0) {
+    if (visited_x_positions[x_pos[i]] || x_pos[i] >= GetGridSize() || x_pos[i] < 0) {
       std::cout << "invalid x positions" << endl;
       return;
     } else {
-      visited_x_positions_[x_pos[i]] = true;
+      visited_x_positions[x_pos[i]] = true;
     }
   }
   x_points_positions_ = x_pos;
   return;
 }
 
-void GridDiagram::SetOPointsPositions(const vector<int> &o_pos) {
+void GridDiagram::SetOPointsPositions(const vector<int>& o_pos) {
   // Check the well-definedness of o_points positions before we reset
   // the positions of o points; 
   if (o_pos.size() != GetGridSize()|| o_pos.empty()) {
@@ -124,12 +124,12 @@ void GridDiagram::SetOPointsPositions(const vector<int> &o_pos) {
   }
 
   // construct a temporary hash map visited_o_positions to check if input is valid;
-  vector<bool> visited_o_positions_(o_pos.size(), false);
+  vector<bool> visited_o_positions(o_pos.size(), false);
   for (int i = 0; i < GetGridSize(); ++i) {
-    if (visited_o_positions_[o_pos[i]] || o_pos[i] >= GetGridSize() || o_pos[i] < 0) {
+    if (visited_o_positions[o_pos[i]] || o_pos[i] >= GetGridSize() || o_pos[i] < 0) {
       return;
     } else {
-      visited_o_positions_[o_pos[i]] = true;
+      visited_o_positions[o_pos[i]] = true;
     }
   }
   o_points_positions_ = o_pos;
@@ -143,15 +143,15 @@ bool GridDiagram::CheckValidInput() const {
   }
 
   // step2: check if x points and o points are permutation of {0,1,..., grid_size - 1};
-  vector<bool> visited_x_positions_(x_points_positions_.size(), false);
-  vector<bool> visited_o_positions_(o_points_positions_.size(), false);
+  vector<bool> visited_x_positions(x_points_positions_.size(), false);
+  vector<bool> visited_o_positions(o_points_positions_.size(), false);
 
   for (size_t i = 0; i < GetGridSize(); ++i) {
-    if (x_points_positions_[i] < 0 || x_points_positions_[i] >= GetGridSize() || o_points_positions_[i] < 0 || o_points_positions_[i] >= GetGridSize() || visited_x_positions_[x_points_positions_[i]] || visited_o_positions_[o_points_positions_[i]]) {
+    if (x_points_positions_[i] < 0 || x_points_positions_[i] >= GetGridSize() || o_points_positions_[i] < 0 || o_points_positions_[i] >= GetGridSize() || visited_x_positions[x_points_positions_[i]] || visited_o_positions[o_points_positions_[i]]) {
       return false;
     } else {
-      visited_x_positions_[x_points_positions_[i]] = true;
-      visited_o_positions_[o_points_positions_[i]] = true;
+      visited_x_positions[x_points_positions_[i]] = true;
+      visited_o_positions[o_points_positions_[i]] = true;
     }
   }
 
@@ -162,6 +162,13 @@ size_t GridDiagram::GetGridSize() const {
   return x_points_positions_.size();
 }
 
+const vector<int>& GridDiagram::GetXPointsPositions() const {
+  return GridDiagram::x_points_positions_;
+}
+
+const vector<int>& GridDiagram::GetOPointsPositions() const {
+  return GridDiagram::o_points_positions_;
+}
   
 }  // namespace griddiagram
 }  // namespace gridhomology

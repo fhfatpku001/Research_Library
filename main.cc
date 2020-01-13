@@ -37,18 +37,22 @@ Copyright (c) 2020 Haofei Fan (fhfatpku001@gmail.com)
 #include <bitset>
 
 #include "grid_diagram.h"
+#include "classic_invariants.h"
+#include "vector_related_tools.h"
 //#include "grid_CFK_generator.h"
 
 using namespace std;
 using namespace gridhomology::griddiagram;
+using namespace gridhomology::classicinvariants;
 
 int main()
 {
   vector<int> x_pos = {1,2,3,4,0};
-  vector<int> o_pos = {3,0,4,2,1};
+  vector<int> o_pos = {3,2,4,0,1};
   GridDiagram* G = new GridDiagram(x_pos, o_pos);
 
   G->PrintGridDiagram();
-  
+
+  cout << GetNumOfLinkComponents(G) << endl;
   return 0;
 }

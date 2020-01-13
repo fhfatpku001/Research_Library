@@ -12,6 +12,8 @@ add_library(
 	grid_move.cc
 	vector_related_tools.h
 	vector_related_tools.cc
+	classic_invariants.h
+	classic_invariants.cc
 	)
 
 add_executable(myproject main.cc) 

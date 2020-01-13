@@ -11,11 +11,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <queue>
-#include <stack>
-#include <functional>
-#include <unordered_map>
-#include <unordered_set>
 
 using namespace std;
 
@@ -27,8 +22,6 @@ public:
   // @brief Constructor of the class GridDiagram;
   // @param x_pos the column positions of x-type points;
   // @param o_pos the column positions of o-type points;
-  // @param assigned_grid_size the size of the grid, it
-  // should be equal to the x_pos size and o_pos size;
   GridDiagram (const vector<int>& x_pos, const vector<int>& o_pos);
 
   // @brief Set new positions for x-type points;
@@ -48,7 +41,6 @@ public:
 
   // @brief Get the positions of x-type points in the Griddiagram;
   // @return In form of {{row(x[i]), col(x[i])}},
-  // i from 0 to grid_size -1;
   vector<vector<int>> GetXPointsCoordinates() const;
 
   // @brief Get the positions of o-type points in the Griddiagram;
@@ -71,8 +63,6 @@ private:
   vector<int> x_points_positions_;
   vector<int> o_points_positions_;
   bool is_valid_grid_;
-
-
 
   // @brief A helper function check whether a grid diagram is valid when constructing it;
   bool CheckValidInput() const;  

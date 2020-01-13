@@ -23,13 +23,13 @@ void PrintTwoDimensionalVector (const vector<vector<int>>& input) {
 
 vector<int> GetRowPositions (const vector<int>& points_column_positions) {
   // Row number of i in points_column_positions are the positions of i;
-  vector<int> row_positions_(points_column_positions.size(), 0);
+  vector<int> row_positions(points_column_positions.size(), 0);
 
   for (int i = 0; i < points_column_positions.size(); ++i) {
-    row_positions_[points_column_positions[i]] = i;
+    row_positions[points_column_positions[i]] = i;
   }
 
-  return row_positions_;
+  return row_positions;
 }
   
 }  // namespace gridhomology
