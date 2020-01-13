@@ -50,7 +50,3 @@ void DoVerticalCyclicPermutation (GridDiagram* grid_diagram);
 }  // namespace gridmoves 
 }  // namespace gridhomology
 
-
-  
-
-
