@@ -14,6 +14,8 @@ add_library(
 	vector_related_tools.cc
 	classic_invariants.h
 	classic_invariants.cc
+	grid_state.h
+	grid_state.cc
 	)
 
 add_executable(myproject main.cc) 

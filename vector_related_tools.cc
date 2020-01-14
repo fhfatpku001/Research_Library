@@ -31,6 +31,47 @@ vector<int> GetRowPositions (const vector<int>& points_column_positions) {
 
   return row_positions;
 }
+
+int JFunction (const vector<pair<double,double>>& p_set, const vector<pair<double,double>>& q_set) {
+  if (p_set.empty() || q_set.empty()) {
+    return 0;
+  }
+
+  int count = 0;
+  for (size_t i = 0; i < p_set.size(); ++i) {
+    for (size_t j = 0; j < q_set.size(); ++j) {
+      if (p_set[i].first < q_set[j].first && p_set[i].second < q_set[j].second) {
+	++count;
+      }
+    }
+  }
+  return count;
+}
+
+double SymJFunction (const vector<pair<double,double>>& p_set, const vector<pair<double,double>>& q_set) {
+  double result = JFunction(p_set, q_set) + JFunction(q_set, p_set);
+  result /= 2.0;
+  return result;
+}
+
+bool IsValidPermutation (const vector<int>& sequence_of_numbers) {
+  // check empty input;
+  if (sequence_of_numbers.empty()) {
+    return false;
+  }
+
+  // each 0 to n - 1 should be visited exactly once;
+  vector<bool> visited_positions(sequence_of_numbers.size(), false);
+  for (size_t i = 0; i < sequence_of_numbers.size(); ++i) {
+    if (sequence_of_numbers[i] < 0 || sequence_of_numbers[i] > sequence_of_numbers.size() || visited_positions[sequence_of_numbers[i]]) {
+      return false;
+    } else {
+      visited_positions[sequence_of_numbers[i]] = true;
+    }
+  }
+  return true;
+}
   
 }  // namespace gridhomology
 }  // namespace tools
+

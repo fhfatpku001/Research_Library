@@ -67,30 +67,36 @@ void GridDiagram::PrintGridDiagram() const {
   return ;
 }
 
-vector<vector<int>> GridDiagram::GetXPointsCoordinates() const {
+vector<pair<double, double>> GridDiagram::GetXPointsCoordinates() const {
   // Check Valid Grid before get x points positions;
   if (!IsValidGrid()) {
     return {};
   }
 
   // Get x_points coordinates;
-  vector<vector<int>> x_coordinates;
+  vector<pair<double, double>> x_coordinates;
   for (int i = 0; i < x_points_positions_.size(); ++i) {
-    x_coordinates.push_back({i, x_points_positions_[i]});
+    pair<double, double> single_x_coordinate;
+    single_x_coordinate.first = i + 0.5;
+    single_x_coordinate.second = x_points_positions_[i] + 0.5;
+    x_coordinates.push_back(single_x_coordinate);
   }
   return x_coordinates;
 }
 
-vector<vector<int>> GridDiagram::GetOPointsCoordinates() const {
+vector<pair<double, double>> GridDiagram::GetOPointsCoordinates() const {
   // Check Valid Grid before get o points positions;
   if (!IsValidGrid()) {
     return {};
   }
 
   // Get o_points coordinates;
-  vector<vector<int>> o_coordinates;
+  vector<pair<double, double>> o_coordinates;
   for (int i = 0; i < o_points_positions_.size(); ++i) {
-    o_coordinates.push_back({i, o_points_positions_[i]});
+    pair<double, double> single_o_coordinate;
+    single_o_coordinate.first = i + 0.5;
+    single_o_coordinate.second = o_points_positions_[i] + 0.5;
+    o_coordinates.push_back(single_o_coordinate);
   }
   return o_coordinates;
 }

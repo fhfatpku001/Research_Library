@@ -41,11 +41,11 @@ public:
 
   // @brief Get the positions of x-type points in the Griddiagram;
   // @return In form of {{row(x[i]), col(x[i])}},
-  vector<vector<int>> GetXPointsCoordinates() const;
+  vector<pair<double, double>> GetXPointsCoordinates() const;
 
   // @brief Get the positions of o-type points in the Griddiagram;
   // @return In form of {{row(o_i), col(o_i)}},
-  vector<vector<int>> GetOPointsCoordinates() const;
+  vector<pair<double, double>> GetOPointsCoordinates() const;
 
   // @brief Get the size of the grid diagram;
   // @return Size of the grid;
