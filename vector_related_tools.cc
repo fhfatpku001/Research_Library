@@ -71,6 +71,44 @@ bool IsValidPermutation (const vector<int>& sequence_of_numbers) {
   }
   return true;
 }
+
+vector<vector<int>> GetAllPermutation (const int& start_num, const int& end_num) {
+  // Check valid input; Require increasing sequence;
+  if (end_num < start_num) {
+    return {};
+  }
+
+  // Construct increasing sequence from start_num to end_num;
+  const size_t sequence_size = end_num - start_num + 1;
+  vector<bool> visited(sequence_size, false);
+  vector<int> current_sequence;
+  vector<vector<int>> all_permutations;
+  HelperGetAllPermutation (all_permutations, current_sequence, visited, start_num);
+  return all_permutations;
+}
+  
+void HelperGetAllPermutation (vector<vector<int>>& all_permutations, vector<int>& current_sequence, vector<bool>& visited, const int& start_num) {
+  // A Helper functions generate all permutation recursively;
+  // Algorithm: Backtracking/DFS;
+  if (current_sequence.size() == visited.size()) {
+    // Case 1: already get a permutation; 
+    all_permutations.push_back(current_sequence);
+  } else {
+    // Case 2: some slots to be filled;
+    for (int i = 0; i < visited.size(); ++i) {
+      if (!visited[i]) {
+	visited[i] = true;
+	current_sequence.push_back(start_num + i);
+	HelperGetAllPermutation(all_permutations, current_sequence, visited, start_num);
+      }
+    }
+  }
+  // Case 3: verified all possibility, pop_back if possible;
+  if (!current_sequence.empty()) {
+    visited[current_sequence.back()] = false;
+    current_sequence.pop_back();
+  }
+}
   
 }  // namespace gridhomology
 }  // namespace tools

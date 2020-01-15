@@ -41,6 +41,7 @@ Copyright (c) 2020 Haofei Fan (fhfatpku001@gmail.com)
 #include "vector_related_tools.h"
 #include "grid_move.h"
 #include "grid_state.h"
+#include "heegaard_floer.h"
 //#include "grid_CFK_generator.h"
 
 using namespace std;
@@ -48,12 +49,14 @@ using namespace gridhomology::griddiagram;
 using namespace gridhomology::classicinvariants;
 using namespace gridhomology::gridmoves;
 using namespace gridhomology::gridstate;
+using namespace gridhomology::tools;
+using namespace gridhomology::heegardfloer;
 
 int main()
 {
   vector<int> x_pos = {1,2,3,4,0};
   vector<int> o_pos = {3,2,4,0,1};
-  //GridDiagram* G = new GridDiagram(x_pos, o_pos);
+  GridDiagram* G = new GridDiagram(x_pos, o_pos);
 
   //G->PrintGridDiagram();
 
@@ -71,9 +74,11 @@ int main()
 					
   //G->PrintGridDiagram();
 
-  GridState* grid_state = new GridState(x_pos);
-  grid_state->PrintGridState();
-  
+  //GridState* grid_state = new GridState(x_pos);
+  //grid_state->PrintGridState();
+  //PrintTwoDimensionalVector(GetAllPermutation(0, 3));
+
+  PrintAllGridState(*G);
   
   
   return 0;

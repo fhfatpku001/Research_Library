@@ -16,6 +16,8 @@ add_library(
 	classic_invariants.cc
 	grid_state.h
 	grid_state.cc
+	heegaard_floer.h
+	heegaard_floer.cc
 	)
 
 add_executable(myproject main.cc) 

@@ -1,24 +1,18 @@
 * TODO_list
 
-** TODO class grid 
-
-   - [X] validation function: is_valid_grid;
-   - [X] grid constructor function;
-   - [X] print grid function: print_grid;
-   - [X] num of link component;
-   - [X] output x/o cordinates;
-   - [ ] grid operation-stabilization;
-   - [ ] grid operation-destabilization;
-   - [ ] grid operation-commutation;
-   - [ ] grid operation-cyclic permutation;
-   - [X] check a grid is a knot or not;
-   - [ ] print fancy link diagram;
-
-** TODO class grid_generator
-   - [X] print a generator in a grid;
-   - [X] is valid generator;
+** DONE class griddiagram 
    - [X] constructor;
-
+   - [X] valid_grid;
+   - [X] set;
+   - [X] print;
+   - [X] get coordinate;
+ 
+** DONE class GridState
+   - [X] constructor;
+   - [X] valid_grid;
+   - [X] set;
+   - [X] print;
+   - [X] get coordinate;
 
 ** TODO class link 
    - [ ] calculate linking number of certain grid;

@@ -53,6 +53,15 @@ double SymJFunction (const vector<pair<double,double>>& p_set, const vector<pair
 // @param sequence_of_numbers the input vector to be checked;
 // @return true if is a permutation : false otherwise;
 bool IsValidPermutation (const vector<int>& sequence_of_numbers);
+
+// @brief Given increasing sequence (start_num, ... , end_num)
+// get all permutations;
+// @param start_num The first number in the sorted vector;
+// @param end_num The last number in the sorted vector;
+// @return All permutations;
+vector<vector<int>> GetAllPermutation (const int& start_num, const int& end_num);
+
+void HelperGetAllPermutation (vector<vector<int>>& all_permutations, vector<int>& current_sequence, vector<bool>& visited, const int& start_num);
   
 }  // namespace tools
 }  // namespace gridhomology
