@@ -18,6 +18,8 @@ add_library(
 	grid_state.cc
 	heegaard_floer.h
 	heegaard_floer.cc
+	sample_functions.h
+	sample_functions.cc
 	)
 
 add_executable(myproject main.cc) 
