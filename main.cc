@@ -55,21 +55,21 @@ using namespace gridhomology::heegardfloer;
 
 int main()
 {
-  vector<int> x_pos = {1,2,3,4,0};
-  vector<int> o_pos = {3,2,4,0,1};
+  vector<int> x_pos = {0,1,2,3,4};
+  vector<int> o_pos = {3,2,1,4,0};
   GridDiagram* G = new GridDiagram(x_pos, o_pos);
 
-  //G->PrintGridDiagram();
+  G->PrintGridDiagram();
 
-  //cout << GetNumOfLinkComponents(*G) << endl;
+  cout << GetNumOfLinkComponents(*G) << endl;
     
-  //DoHorizontalCommutation(G, 3);
+  DoHorizontalCommutation(G, 3);
 					
-  //G->PrintGridDiagram();
+  G->PrintGridDiagram();
 
-  //DoHorizontalCyclicPermutation(G);
+  DoHorizontalCyclicPermutation(G);
 
-  //G->PrintGridDiagram();
+  G->PrintGridDiagram();
 
   //DoVerticalCyclicPermutation(G);
 					
@@ -88,7 +88,7 @@ int main()
     cout << GetXMaslovGrading(*G, it) << " " << GetOMaslovGrading(*G, it) << " " << GetReducedAlexanderGrading(*G, it) << endl;
     }*/
 
-  cout << gridhomology::sample::GetProbabilityOfKnotInGridDiagram(6) << "\n";
+  //cout << gridhomology::sample::GetProbabilityOfKnotInGridDiagram(6) << "\n";
   
   return 0;
 }
