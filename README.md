@@ -174,11 +174,11 @@ After
 }
 ```
 
-5. sample_functions.h: contains some sample usage of functions inside a library.
+5. sample_functions.h: contains some sample applications of functions inside a library.
 
 For example:
 
-What is the possibility for "a grid diagram represents a knot?"
+Consider the questions: What is the possibility for "a grid diagram represents a knot?"
 
 ```
 GetProbabilityOfKnotInGridDiagram (6); 
