@@ -88,9 +88,9 @@ Novel Heegaard Floer (grid homology) Invariant;
 Those invariants from grid homology are pretty useful not only in Geometry/Topology, but also in real World:
 
 For example, 
-"Recent work, for example, has applied Floer homology to determine how various enzymes in the body alter the knottedness of DNA. Understanding these mechanisms is important for developing certain drugs." --- ![Link](http://grantome.com/grant/NSF/DMS-1251064)
+"Recent work, for example, has applied Floer homology to determine how various enzymes in the body alter the knottedness of DNA. Understanding these mechanisms is important for developing certain drugs." --- http://grantome.com/grant/NSF/DMS-1251064
 
-Although Floer homology is pretty powerful and useful, unfortunately, not all variations of Floer homology are easy to calculate. See ![this article](https://arxiv.org/pdf/1401.7107.pdf) for an introduction. By Manolescu-Ozsvath-Sarkar and many other mathematician's hard work, grid homology was introduced. All most invariants of Heegaard Floer homology can be calculated by hand or by "A computer program"; See ![this article in Annals of Mathematics](A combinatorial description of knot Floer homology) by Manolescu, Ozsvath and Sarkar. In Page 657, they provided two examples of the calculation.
+Although Floer homology is pretty powerful and useful, unfortunately, not all variations of Floer homology are easy to calculate. See https://arxiv.org/pdf/1401.7107.pdf for an introduction. By Manolescu-Ozsvath-Sarkar and many other mathematician's hard work, grid homology was introduced. All most invariants of Heegaard Floer homology can be calculated by hand or by "A computer program"; See this article in Annals of Mathematics (A combinatorial description of knot Floer homology) by Manolescu, Ozsvath and Sarkar. In Page 657, they provided two examples of the calculation.
 
 # Features:
 
