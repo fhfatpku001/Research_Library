@@ -8,7 +8,6 @@ Here is a picture of knot (Trefoil):
 
 One can show that, all knots and links in 3-dimensional space R^3 or S^3 can be represented by a grid diagram (actually a grid diagram for torus):
 ```
-{
 .___.___.___.___.___.
 | X |   |   | O |   |
 .___.___.___.___.___.
@@ -20,7 +19,6 @@ One can show that, all knots and links in 3-dimensional space R^3 or S^3 can be 
 .___.___.___.___.___.
 |   |   | O |   | X |
 .___.___.___.___.___.
-}
 ```
 
 Here we connect X to O in each row, and O to X in each column.
@@ -29,7 +27,6 @@ The shape change of knots and links can be represented by a movie of grid, which
 
 For example: Let G be a grid diagram;
 ```
-{
 G->PrintGridDiagram():
 
 .___.___.___.___.___.
@@ -71,7 +68,6 @@ G->PrintGridDiagram();             |
 .___.___.___.___.___.
 | X |   |   | O |   |
 .___.___.___.___.___.
-}
 ```
 					
 From a grid diagram of knot and links, we can calculate many topological invariants.
@@ -128,9 +124,7 @@ Output:
 Example: Number of Link Components in a grid diagram:
 
 ```
-{
 cout << GetNumOfLinkComponents(*G) << endl
-}
 ```
 
 Output: 2;
@@ -153,9 +147,7 @@ From grid diagram:
 ```
 After
 ```
-{
  DoHorizontalCommutation(grid_diagram, 3);
-}
 
 .___.___.___.___.___.
 | X |   |   | O |   |
@@ -180,4 +172,16 @@ After
     cout << GetXMaslovGrading(*grid_diagram, it) << " " << GetOMaslovGrading(*grid_diagram, it) << " " << GetReducedAlexanderGrading(*grid_diagram, it) << endl;
    }
 }
+```
+
+5. sample_functions.h: contains some sample usage of functions inside a library.
+
+For example:
+
+What is the possibility for "a grid diagram represents a knot?"
+
+```
+GetProbabilityOfKnotInGridDiagram (6); 
+
+output: 0.166667
 ```

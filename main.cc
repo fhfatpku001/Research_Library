@@ -88,7 +88,7 @@ int main()
     cout << GetXMaslovGrading(*G, it) << " " << GetOMaslovGrading(*G, it) << " " << GetReducedAlexanderGrading(*G, it) << endl;
     }*/
 
-  //cout << gridhomology::sample::GetProbabilityOfKnotInGridDiagram(6) << "\n";
+  cout << gridhomology::sample::GetProbabilityOfKnotInGridDiagram(6) << "\n";
   
   return 0;
 }
