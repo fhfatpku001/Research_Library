@@ -7,7 +7,8 @@ Here is a picture of knot (Trefoil):
 ![trefoil](https://github.com/fhfatpku001/Research_Library/blob/master/Trefoil.svg "Trefoil A strongly invertible knot")
 
 One can show that, all knots and links in 3-dimensional space R^3 or S^3 can be represented by a grid diagram (actually a grid diagram for torus):
-
+```
+{
 .___.___.___.___.___.
 | X |   |   | O |   |
 .___.___.___.___.___.
@@ -19,13 +20,16 @@ One can show that, all knots and links in 3-dimensional space R^3 or S^3 can be 
 .___.___.___.___.___.
 |   |   | O |   | X |
 .___.___.___.___.___.
+}
+```
 
 Here we connect X to O in each row, and O to X in each column.
 
 The shape change of knots and links can be represented by a movie of grid, which we can decompose into grid move:
 
 For example: Let G be a grid diagram;
-
+```
+{
 G->PrintGridDiagram():
 
 .___.___.___.___.___.
@@ -67,6 +71,8 @@ G->PrintGridDiagram();             |
 .___.___.___.___.___.
 | X |   |   | O |   |
 .___.___.___.___.___.
+}
+```
 					
 From a grid diagram of knot and links, we can calculate many topological invariants.
 
@@ -97,13 +103,12 @@ Construct a grid diagram class and related grid state class;
 
 Example:
 ```
-{
 vector<int> x_points_positions = {0,1,2,3,4};
 vector<int> o_points_positions = {3,2,1,4,0};
 GridDiagram* grid_diagram= new GridDiagram(x_points_positions, o_points_positions);
 grid_diagram->PrintGridDiagram();
-}
-```
+
+
 Output:
 .___.___.___.___.___.
 | X |   |   | O |   |
@@ -116,7 +121,7 @@ Output:
 .___.___.___.___.___.
 | O |   |   |   | X |
 .___.___.___.___.___.
-
+```
 
 2. classic_invariants.h: Calculate classic link invariants; 
 
@@ -133,6 +138,7 @@ Output: 2;
 3. grid_move.h: contains elementary moves of a grid diagram, i.e. these elementary moves change a grid to another grid;
 
 From grid diagram:
+```
 .___.___.___.___.___.
 | X |   |   | O |   |
 .___.___.___.___.___.
@@ -144,13 +150,13 @@ From grid diagram:
 .___.___.___.___.___.
 | O |   |   |   | X |
 .___.___.___.___.___.
-
+```
 After
 ```
 {
  DoHorizontalCommutation(grid_diagram, 3);
 }
-```
+
 .___.___.___.___.___.
 | X |   |   | O |   |
 .___.___.___.___.___.
@@ -162,7 +168,7 @@ After
 .___.___.___.___.___.
 |   |   |   | X | O |
 .___.___.___.___.___.
-
+```
 4. heegaard_floer.h: contains all functions (to calculate certain Heegaard Floer invariants) related to Heegaar Floer homology:
 
 ```
